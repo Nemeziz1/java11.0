@@ -15,7 +15,6 @@ public class PosterManagerTest {
     Post second = new Post(2, 2, "second", "action", false);
     posterManager.add(first);
     posterManager.add(second);
-    posterManager.getLastFilms();
     Post[] actual = posterManager.getLastFilms();
     Post[] expected = new Post[]{second, first};
     assertArrayEquals(expected, actual);
@@ -35,7 +34,6 @@ public class PosterManagerTest {
     Post nine = new Post(9, 9, "nine", "horror", true);
     Post ten = new Post(10, 10, "ten", "action", false);
     posterManager.add(one);
-    posterManager.add(one);
     posterManager.add(two);
     posterManager.add(three);
     posterManager.add(four);
@@ -45,7 +43,6 @@ public class PosterManagerTest {
     posterManager.add(eight);
     posterManager.add(nine);
     posterManager.add(ten);
-    posterManager.getLastFilms();
     Post[] actual = posterManager.getLastFilms();
     Post[] expexcted = new Post[]{ten, nine, eight, seven, six, five, four, three, two, one};
     assertArrayEquals(expexcted, actual);
@@ -66,7 +63,6 @@ public class PosterManagerTest {
     Post ten = new Post(10, 10, "ten", "action", false);
     Post eleven = new Post(11, 11, "eleven", "horror", true);
     posterManager.add(one);
-    posterManager.add(one);
     posterManager.add(two);
     posterManager.add(three);
     posterManager.add(four);
@@ -77,9 +73,8 @@ public class PosterManagerTest {
     posterManager.add(nine);
     posterManager.add(ten);
     posterManager.add(eleven);
-    posterManager.getLastFilms();
     Post[] actual = posterManager.getLastFilms();
-    Post[] expexcted = new Post[] {eleven, ten, nine, eight, seven, six, five, four, three, two};
-    assertArrayEquals(expexcted, actual);
+    Post[] expected = new Post[] {eleven, ten, nine, eight, seven, six, five, four, three, two};
+    assertArrayEquals(expected, actual);
   }
 }
