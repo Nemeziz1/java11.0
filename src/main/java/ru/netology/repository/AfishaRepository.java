@@ -43,7 +43,10 @@ public class AfishaRepository {
 
     public void removeAll()
     {
-        int length = 0;
-        Afisha[] tmp = new Afisha[length];
+        Afisha[] tmp = new Afisha[films.length];
+        for (Afisha item : films) {
+            tmp = null;
+        }
+        films = tmp;
     }
 }

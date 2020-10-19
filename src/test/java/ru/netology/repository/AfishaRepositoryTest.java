@@ -90,9 +90,12 @@ class AfishaRepositoryTest {
         Afisha one = new Afisha(1, 1, "one", "action", true);
         Afisha two = new Afisha(2, 2, "two", "comedy", true);
         Afisha three = new Afisha(3, 3, "three", "horror", true);
+        afishaRepository.save(one);
+        afishaRepository.save(two);
+        afishaRepository.save(three);
         afishaRepository.removeAll();
         Afisha[] actual = afishaRepository.findAll();
-        Afisha[] expected = new Afisha[]{};
+        Afisha[] expected = null;
         assertArrayEquals(expected, actual);
     }
 }
