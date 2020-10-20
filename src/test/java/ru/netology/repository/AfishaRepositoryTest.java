@@ -95,7 +95,7 @@ class AfishaRepositoryTest {
         afishaRepository.save(three);
         afishaRepository.removeAll();
         Afisha[] actual = afishaRepository.findAll();
-        Afisha[] expected = null;
+        Afisha[] expected = {};
         assertArrayEquals(expected, actual);
     }
 }
