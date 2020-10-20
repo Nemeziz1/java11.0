@@ -50,7 +50,7 @@ public class PosterManagerTest {
 
   @Test
   public void getLastTenFilmsMore() {
-    PosterManager posterManager = new PosterManager(11);
+    PosterManager posterManager = new PosterManager(10);
     Post one = new Post(1, 1, "one", "comedy", true);
     Post two = new Post(2, 2, "two", "action", true);
     Post three = new Post(3, 3, "three", "horror", true);

@@ -4,7 +4,7 @@ import ru.netology.domain.Post;
 
 public class PosterManager {
     private Post[] films = new Post[0];
-    private int numberOfFilms = 10;
+    private int numberOfFilms = 10; //число фильмов, которые нужно вывести (10 или меньше, в зависимости от количества фильмов в афише
     public void add(Post post) {
         // создаём новый массив размером на единицу больше
         int length = films.length + 1;
@@ -22,9 +22,9 @@ public class PosterManager {
     }
 
     public Post[] getLastFilms() {
-        int length = films.length > numberOfFilms ? numberOfFilms : films.length;
-        Post[] tmp = new Post[length];
-        for (int i = 0; i < length; i++) {
+        int count = films.length > numberOfFilms ? numberOfFilms : films.length;
+        Post[] tmp = new Post[count];
+        for (int i = 0; i < count; i++) {
             int index = films.length - i - 1;
             tmp[i] = films[index];
         }
