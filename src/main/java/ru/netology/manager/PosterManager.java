@@ -22,13 +22,11 @@ public class PosterManager {
     }
 
     public Post[] getLastFilms() {
-        int length = this.numberOfFilms;
-        Post[] tmp = new Post[films.length >=10? 10: length];
+        int length = films.length > numberOfFilms ? numberOfFilms : films.length;
+        Post[] tmp = new Post[length];
         for (int i = 0; i < length; i++) {
-            if (i >= 10) {
-                return tmp;
-            }
-            tmp[i] = films[films.length - i - 1];
+            int index = films.length - i - 1;
+            tmp[i] = films[index];
         }
         return tmp;
     }
@@ -37,6 +35,9 @@ public class PosterManager {
     }
 
     public PosterManager(int numberOfFilms) {
+        if (numberOfFilms < 0) {
+            return;
+        }
         this.numberOfFilms = numberOfFilms;
     }
 }
